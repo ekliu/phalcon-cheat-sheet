@@ -1,0 +1,1411 @@
+<!--
+Route
+Events Management
+Request
+Controller
+Modle
+Session
+Cookie
+ORM
+Phql
+Validation
+Filter
+Volt
+Cache
+Pagination
+Translations
+Logging
+CLI
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <meta name="description" content="Phalcon Cheat Sheet , Codes , function , methods of Phalcon framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="@ekliu">
+    <title>Phalcon 3.1.1 速查表</title>
+    <meta name="description" content="Phalcon 3.1.1 速查表方便快速浏览，支持并且只支持 Phalcon 支持手机访问，支持中英文版本">
+    <meta name="keywords" content="Phalcon 3.1.1 速查表，Phalcon 3.1.1 教程，Phalcon 3.1.1 新手教程，Phalcon 3.1.1 Artisan，Phalcon 3.1.1 Auth，Phalcon 3.1.1 Blade，Phalcon 3.1.1 Cache，
+    Phalcon 3.1.1 Composer， Phalcon 3.1.1 Config， Phalcon 3.1.1 Container， Phalcon 3.1.1 Cookie， Phalcon 3.1.1 DB， Phalcon 3.1.1 Environment， Phalcon 3.1.1 Event， Phalcon 3.1.1 File， Phalcon 3.1.1 Form， Phalcon 3.1.1 HTML， Phalcon 3.1.1 Helper， Phalcon 3.1.1 Input， Phalcon 3.1.1 Lang， Phalcon 3.1.1 Log， Phalcon 3.1.1 Mail， Phalcon 3.1.1 Model， Phalcon 3.1.1 Pagination， Phalcon 3.1.1 Queue， Phalcon 3.1.1 Redirect， Phalcon 3.1.1 Request， Phalcon 3.1.1 Response， Phalcon 3.1.1 Route， Phalcon 3.1.1 SSH， Phalcon 3.1.1 Schema， Phalcon 3.1.1 Security， Phalcon 3.1.1 Session， Phalcon 3.1.1 String， Phalcon 3.1.1 URL， Phalcon 3.1.1 UnitTest， Phalcon 3.1.1 Validation， Phalcon 3.1.1 View">
+    <link rel="stylesheet" href="assets/css/normalize.css"/>
+    <link rel="stylesheet" href="assets/css/foundation.min.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/page.css"/>
+</head>
+<body>
+
+<div class="off-canvas-wrapper wrapper-container">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <div class="off-canvas position-left sidebar-canvas" id="offCanvasLeft" data-off-canvas data-position="left">
+            <button class="close-button" aria-label="Close menu" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <ul class="mobile-ofc vertical menu">
+                <li>
+                    <button class="warning hollow button check-all-button">查看全部</button>
+                </li>
+                <li>
+                    <ul class="submenu menu vertical mobile-cmd-cell" data-submenu>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+            <div class="title-bar hide-for-medium">
+                <div class="title-bar-left">
+                    <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+                </div>
+            </div>
+        </div>
+
+        <a href="#top" id="top-button" title="Top"><i class="icon-arrow-up"></i></a>
+        <a href="#" class="comments-toggle" title="隐藏/展示代码注释"><i class="icon-eye-close"></i></a>
+
+        <div class="row full-width">
+            <div class="large-2 columns code-column sidebar">
+                <h5 class="sidebar-title"> Phalcon 3.1.1 速查表</h5>
+                <hr class="horizonal-line">
+                <div class="show-for-medium">
+                    <button class="warning hollow button check-all-button">查看全部</button>
+
+                    <div class="clearfix"></div>
+                    <ul class="sidebar-menu">
+                    </ul>
+
+                    <div class="clearfix"></div>
+
+                    <hr class="horizonal-line">
+                </div>
+                <ul class="sidebar-bottom">
+                    <li><a href="http://www.iphalcon.cn/" class="button expand small radius alert">Phalcon 中文文档</a></li>
+                    <li>
+                        <a href="javascript:;" target="_blank">by ekliu</a>
+                    </li>
+
+                    <li class="social-icon">
+                        <a href="http://github.com/ekliu" target="_blank" data-tooltip aria-haspopup="true" class="top" data-disable-hover="false" tabindex="2" title="此项目由 ekliu 倾情维护">
+                            <div class="avatar"></div>
+                        </a>
+                        <a href="https://github.com/ekliu/phalcon-cheat-sheet" target="_blank" data-tooltip aria-haspopup="true" class="top" data-disable-hover="false" tabindex="2" title="在 GitHub 查看此项目">
+                            <i class="icon-github"></i>
+                        </a>
+                        <!--<a href="https://twitter.com/" target="_blank" data-tooltip aria-haspopup="true" class="top" data-disable-hover="false" tabindex="2" title="关注我的 Twitter">-->
+                            <!--<i class="icon-twitter"></i>-->
+                        <!--</a>-->
+                        <!--<a href="http://weibo.com/" target="_blank" data-tooltip aria-haspopup="true" class="top" data-disable-hover="false" tabindex="2" title="关注我的微博">-->
+                            <!--<i class="icon-weibo"></i>-->
+                        <!--</a>-->
+                    </li>
+                    <li class="languages-flag">
+                        <a href="javascript:;">
+                            <i class="cn flag"></i>
+                        </a>
+                        <span class="vertical-line">|</span>
+                        <a href="javascript:;">
+                            <i class="gb flag"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="large-10 columns code-column code-container">
+                <div class="grid">
+
+                    <!--Route -->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Route" href="#Route">Route</a> <a href="javascript:;" title="Route CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+// Setting route file on service
+$di->set('router', function () {
+    return include __DIR__ . '[route file]';
+}, true);
+
+// Create custom routes - index.php
+$application->useImplicitView(false);
+
+// Grouping routes under same controller
+$group = new \Phalcon\Mvc\Router\Group([
+    'namespace' => '[namespace separed with double \\]',
+    'controller' => '[controller name]',
+]);
+
+// All the routes start with /group
+$group->setPrefix('/group');
+
+// Adding route to group
+$group->add('[route]', ['action' => '[method]'])->setName('[keyword]');
+$router->mount($group);
+
+// Getting parameters using dispatcher service
+$this->dispatcher->getParam('[parameter]');
+
+// Ways to define a route
+$router->add(
+    '[route]',
+    array(
+        'controller' => '[controller name]',
+        'action' => '[method name]',
+    )
+);
+
+// Single flexible route
+$router->add(
+    '/admin/:controller/a/:action/:params',
+    array(
+        'controller' => 1,
+        'action' => 2,
+        'params' => 3,
+    )
+);
+
+// Flexible route with parameters with name
+$router->add(
+    '/news/([0-9]{4})/([0-9]{2})/([0-9]{2})/:params',
+    array(
+        'controller' => 'posts',
+        'action' => 'show',
+        'year' => 1, // ([0-9]{4})
+        'month' => 2, // ([0-9]{2})
+        'day' => 3, // ([0-9]{2})
+        'params' => 4, // :params
+    )
+);
+
+// Route with parameters with name
+$router->add(
+    '/documentation/{chapter}/{name}.{type:[a-z]+}',
+    array(
+        'controller' => 'documentation',
+        'action' => 'show'
+    )
+);
+
+// Short form using statics
+$router->add("/posts/{year:[0-9]+}/{title:[a-z\-]+}", "Posts::show");
+
+// Array form
+$router->add(
+    "/posts/([0-9]+)/([a-z\-]+)",
+    array(
+        "controller" => "posts",
+        "action" => "show",
+        "year" => 1,
+        "title" => 2,
+    )
+);
+
+// This route only will be matched if the HTTP method is GET
+$router->addGet("/products/edit/{id}", "Products::edit");
+
+// This route only will be matched if the HTTP method is POST
+$router->addPost("/products/save", "Products::save");
+
+// This route will be matched if the HTTP method is POST or PUT
+$router->add("/products/update")->via(array("POST", "PUT"));
+
+// Getting the processed controller
+$router->getControllerName();
+
+// Getting the processed action
+$router->getActionName();
+
+//Get the matched route
+$route = $router->getMatchedRoute();
+
+// Generate a link with predefined route
+$this->url->get(['for' => '', 'paramN' => $paramN]);
+                        </pre>
+                    </section>
+
+                    <!--Controller-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Controller" href="#Controller">Controller</a> <a href="javascript:;" title="Controller CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+// Forward flow to the index action
+$this->dispatcher->forward(array(
+    "controller" => "post",
+    "action" => "index"
+));
+
+// Forward flow to another action in the current controller
+$this->dispatcher->forward(array(
+    "action" => "search"
+));
+
+// Forward flow to another action in the current controller passing parameters
+$this->dispatcher->forward(array(
+    "action" => "search",
+    "params" => array(1, 2, 3)
+));
+
+// Get the post's title passed in the URL as parameter or prepared in an event
+$title = $this->dispatcher->getParam('param');
+
+                        </pre>
+                    </section>
+
+                    <!--Dispatcher-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Dispatcher" href="#Dispatcher">Dispatcher</a> <a href="javascript:;" title="Dispatcher CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+use Phalcon\Mvc\Dispatcher as MvcDispatcher;
+use Phalcon\Events\Event;
+use Phalcon\Events\Manager as EventsManager;
+
+$di->set(
+    "dispatcher",
+    function () {
+        // 创建一个事件管理
+        $eventsManager = new EventsManager();
+
+        // 为“dispatch”类型附上一个侦听者
+        $eventsManager->attach(
+            "dispatch",
+            function (Event $event, $dispatcher) {}
+        );
+
+        $dispatcher = new MvcDispatcher();
+
+        // 将$eventsManager绑定到视图组件
+        $dispatcher->setEventsManager($eventsManager);
+
+        return $dispatcher;
+    },
+    true
+);
+
+
+
+use Phalcon\Mvc\Controller;
+use Phalcon\Mvc\Dispatcher;
+
+class PostsController extends Controller
+{
+    public function beforeExecuteRoute(Dispatcher $dispatcher)
+    {
+        // 在每一个找到的动作前执行
+    }
+
+    public function afterExecuteRoute(Dispatcher $dispatcher)
+    {
+        // 在每一个找到的动作后执行
+    }
+}
+
+
+
+处理 Not-Found 错误（Handling Not-Found Exceptions）
+
+use Exception;
+use Phalcon\Dispatcher;
+use Phalcon\Mvc\Dispatcher as MvcDispatcher;
+use Phalcon\Events\Event;
+use Phalcon\Events\Manager as EventsManager;
+use Phalcon\Mvc\Dispatcher\Exception as DispatchException;
+
+$di->setShared(
+    "dispatcher",
+    function () {
+        // 创建一个事件管理
+        $eventsManager = new EventsManager();
+
+        // 附上一个侦听者
+        $eventsManager->attach(
+            "dispatch:beforeException",
+            function (Event $event, $dispatcher, Exception $exception) {
+                // 处理404异常
+                if ($exception instanceof DispatchException) {
+                    $dispatcher->forward(
+                        [
+                            "controller" => "index",
+                            "action"     => "show404",
+                        ]
+                    );
+
+                    return false;
+                }
+
+                // 代替控制器或者动作不存在时的路径
+                switch ($exception->getCode()) {
+                    case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+                    case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
+                        $dispatcher->forward(
+                            [
+                                "controller" => "index",
+                                "action"     => "show404",
+                            ]
+                        );
+
+                        return false;
+                }
+            }
+        );
+
+        $dispatcher = new MvcDispatcher();
+
+        // 将EventsManager绑定到调度器
+        $dispatcher->setEventsManager($eventsManager);
+
+        return $dispatcher;
+    }
+);
+
+当然，这个方法也可以移至独立的插件类中，使得在循环调度产生异常时可以有超过一个类执行需要的动作：
+
+use Exception;
+use Phalcon\Events\Event;
+use Phalcon\Mvc\Dispatcher;
+use Phalcon\Mvc\Dispatcher\Exception as DispatchException;
+
+class ExceptionsPlugin
+{
+    public function beforeException(Event $event, Dispatcher $dispatcher, Exception $exception)
+    {
+        // Default error action
+        $action = "show503";
+
+        // 处理404异常
+        if ($exception instanceof DispatchException) {
+            $action = "show404";
+        }
+
+        $dispatcher->forward(
+            [
+                "controller" => "index",
+                "action"     => $action,
+            ]
+        );
+
+        return false;
+    }
+}
+
+
+
+                        </pre>
+                    </section>
+
+                    <!--Request-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Request" href="#Request">Request</a> <a href="javascript:;" title="Request CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+// Verify if its Post or Ajax request
+$request = new Phalcon\Http\Request();
+if ($request->isPost()) {
+    if ($request->isAjax()) {
+            echo 'Request was made using POST and AJAX';
+    }
+}
+
+// Gets a variable from the $_REQUEST superglobal applying filters if needed. If no parameters are given the $_REQUEST superglobal is returned
+
+//Returns value from $_REQUEST["user_email"] without sanitizing
+$userEmail = $request->get("user_email");
+
+//Returns value from $_REQUEST["user_email"] with sanitizing
+$userEmail = $request->get("user_email", "email");
+
+// Gets a variable from the $_POST superglobal applying filters if needed If no parameters are given the $_POST superglobal is returned
+
+//Returns value from $_POST["user_email"] without sanitizing
+$userEmail = $request->getPost("user_email");
+
+//Returns value from $_POST["user_email"] with sanitizing
+$userEmail = $request->getPost("user_email", "email");
+
+// Gets a variable from put request
+
+$userEmail = $request->getPut("user_email");
+
+$userEmail = $request->getPut("user_email", "email");
+
+// Gets variable from $_GET superglobal applying filters if needed If no parameters are given the $_GET superglobal is returned
+
+//Returns value from $_GET["id"] without sanitizing
+$id = $request->getQuery("id");
+
+//Returns value from $_GET["id"] with sanitizing
+$id = $request->getQuery("id", "int");
+
+//Returns value from $_GET["id"] with a default value
+$id = $request->getQuery("id", null, 150);
+
+// Gets HTTP header from request data
+
+$request->getHeader('Name');
+
+// Gets information about schema, host and port used by the request
+
+$request->getClientAddress();
+
+// Checks whether HTTP method is POST. if $_SERVER[‘REQUEST_METHOD’]==’POST’ || GET || PUT || PATCH || HEAD || DELETE  || OPTIONS
+
+$request->isPost();
+$request->isGet();
+$request->isPut();
+                        </pre>
+                    </section>
+
+                    <!--ORM-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="ORM" href="#ORM">ORM</a> <a href="javascript:;" title="ORM CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+// Find record by its primary id = 3
+$count = Robots::count();
+$robot = Robots::findFirst(3);
+
+
+// Find one record with conditions + bind params and all phalcon options
+$robots = Robots::findFirst([
+            "columns" => "id, name",
+            "conditions" => "type = ?1",
+            "bind"       => [1 => "virtual"],
+            "order" => "id DESC" ,
+            "limit" => "limit" => 10 / "limit" => ["number" => 10, "offset" => 5],
+            "group" => "name, status",
+            "cache" => array("lifetime" => 3600, "key" => "my-find-key"),
+           ]);
+
+// Find all record with  conditions + bind params and all phalcon options
+$robots = Robots::find([
+            "columns" => "id, name",
+            "conditions" => "type = ?1",
+            "bind"       => [1 => "virtual"],
+            "order" => "id DESC" ,
+            "limit" => "limit" => 10 / "limit" => ["number" => 10, "offset" => 5],
+            "group" => "name, status",
+            "cache" => array("lifetime" => 3600, "key" => "my-find-key"),
+           ]);
+
+// Using any Models Query Builder
+$model::query()
+    ->where('field = :bindparam:')
+    ->andWhere( "field2 = '1' ")
+    ->bind( ['bindparam' => '2'] )
+    ->order('field ASC')
+    ->limit(10)
+    ->cache(['key' => 'optionalifyouwant' , 'lifetime' => 'optionalalso'])
+    ->execute();
+
+//Create a BaseMoble extends Model
+
+    /**
+     * 转换where数组传参数
+     * 支持 AND,OR,比较符,LIKE,IN,NOT IN
+     * @param array $where
+     * $where = [
+     *      'member_id' => 10,
+     *      'member_id' => 2,
+     *      ['member_id', '<', 2000],
+     *      ['member_id', '>=', 2000],
+     *      ['uname', 'like', 'jam%'],
+     *      [['member_id', '=', 500], 'or', ['member_id', '>', 300]],
+     *      ['member_id', 'in', [5, 2, 3, 4]]
+     * ];
+     * @param array $operate
+     * $operate = [
+     *      "order" => "uname",
+     *      "limit" => 3,
+     *      "offset" => 2,
+     *      "group" => "uname",
+     *      "for_update" => true,
+     *      "shared_lock" => true,
+     * ];
+     * @param string $columns 字段
+     * @return array
+     * @link http://www.iphalcon.cn/reference/models.html
+     */
+    public static function myWhere(array $where = [], array $operate = [], $columns = '')
+    {
+        $data = [];
+        if (!empty($where)) {
+            $i = 0;
+            $conditions = '';
+            $bind = [];
+            foreach ($where as $key => $items) {
+                if (count($items) == 1) {
+                    //普通where
+                    $conditions .= $key . ' = ?' . $i . ' AND ';
+                    $bind[$i] = $items;
+                } else if (count($items) == 3) {
+
+                    //查看第二位表示
+                    $key_word = $items[1];
+
+                    //符号操作
+                    if (in_array($key_word, ['>', '>=', '<', '<=', '=', '<>', '!='])) {
+                        $conditions .= $items[0] . " {$key_word} ?" . $i . ' AND ';
+                        $bind[$i] = $items[2];
+                    }
+
+                    //LIKE
+                    if (strcasecmp($key_word, 'LIKE') == 0) {
+                        $conditions .= $items[0] . " {$key_word} ?" . $i . ' AND ';
+                        $bind[$i] = $items[2];
+                    }
+
+                    //OR 只支持单层
+                    if (strcasecmp($key_word, 'OR') == 0) {
+                        $conditions .= '(';
+                        foreach ($items as $k => $value) {
+
+                            if ($k != 1) {
+                                $conditions .= $value[0] . ' ' . $value[1] . "?" . $i . ' OR ';
+                                $bind[$i] = $value[2];
+                                $i++;
+                            }
+                        }
+                        //去掉最后一个or
+                        $conditions = rtrim($conditions, ' OR ');
+                        $conditions .= ') AND ';
+                    }
+
+                    //IN /NOT IN
+                    if (strcasecmp($key_word, 'IN') == 0 || strcasecmp($key_word, 'ONTIN') == 0) {
+                        $wherein = '';
+                        $in_array = array_values($items[2]);
+                        foreach ($in_array as $i => $v) {
+                            $wkey = $i + 10000;
+                            $wherein .= '?' . $wkey . ',';
+                            $bind[$wkey] = $v;
+                        }
+                        $wherein = rtrim($wherein, ',');
+                        $conditions .= ' ' . $items[0] . " {$key_word} (" . $wherein . ')' . ' AND ';
+                    }
+
+                }
+
+                $i++;
+
+            }
+            //去掉最后一个and
+            $conditions = rtrim($conditions, 'AND ');
+
+            //组装where条件和bind关系
+            $data['conditions'] = $conditions;
+            $data['bind'] = $bind;
+
+        }
+
+        //组装查询字段
+        if (!empty($columns)) {
+            $data['columns'] = $columns;
+        }
+
+        //组装操作字段
+        if (!empty($operate)) {
+            foreach ($operate as $op_key => $op) {
+                $data[$op_key] = $op;
+            }
+        }
+
+        return $data;
+    }
+
+使用： Member::find(PhalBaseModel::myWhere($where));
+                        </pre>
+                    </section>
+
+                    <!--Session-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Session" href="#Session">Session</a> <a href="javascript:;" title="Session CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+$di->setShared(
+    "session",
+    function () {
+        $session = new Session();
+
+        $session->start();
+
+        return $session;
+    }
+);
+
+// 设置一个session变量
+$this->session->set("user-name", "Michael");
+
+// 检查session变量是否已定义
+if ($this->session->has("user-name")) {
+    // 获取session变量的值
+    $name = $this->session->get("user-name");
+}
+
+// 删除session变量
+$this->session->remove("user-name");
+
+// 销毁全部session会话
+$this->session->destroy();
+                        </pre>
+                    </section>
+
+                    <!--Cookie-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Cookie" href="#Cookie">Cookie</a> <a href="javascript:;" title="Cookie CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+// Check if cookie exists
+$this->cookies->has("session-data");
+
+// Get cookie by name
+$myCookie = $this->cookies->get("session-data");
+
+// Get the cookie attributes
+$myCookie->getValue();         //value
+$myCookie->getPath();          //site path
+$myCookie->getName();          //cookie name
+$myCookie->getExpiration();    //expire time (unix timestamp) int
+$myCookie->getDomain();        //cookie domain
+$myCookie->getHttpOnly();      //is http only
+$myCookie->getSecure();        //is secured
+
+
+/*
+ * Set the cookie
+ * Full set of params:
+ * set(
+ *      mixed $name,
+ *      [mixed $value],
+ *      [mixed $expire],
+ *      [mixed $path],
+ *      [mixed $secure],
+ *      [mixed $domain],
+ *      [mixed $httpOnly]
+ * )
+ */
+$this->cookies->set(
+    "session-data",
+    "some value",
+    time() + 3600
+);
+
+// Delete the cookie
+$this->cookies->get("session-data")->delete();
+
+
+// By default cookies are encrypted automatically
+
+// Disable encryption
+use Phalcon\Http\Response\Cookies;
+
+$di->set(
+    "cookies",
+    function () {
+        $cookies = new Cookies();
+
+        $cookies->useEncryption(false);
+
+        return $cookies;
+    }
+);
+
+// Use encryption with own key in Crypt service
+use Phalcon\Crypt;
+
+$di->set(
+    "crypt",
+    function () {
+        $crypt = new Crypt();
+
+        $crypt->setKey('@2sdj8%%dp?.to/..j123D$'); // Use your own key!
+
+        return $crypt;
+    }
+);
+                        </pre>
+                    </section>
+
+                    <!--Phql-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Phql" href="#Phql">Phql</a> <a href="javascript:;" title="Phql CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+$phql = "SELECT * FROM Cars WHERE Cars.name = ?0";
+$cars = $manager->executeQuery(
+    $phql,
+    [
+        0 => "Lamborghini Espada"
+    ]
+);
+
+// Inserting using placeholders
+$phql = "INSERT INTO Cars (name, brand_id, year, style) "
+    . "VALUES (:name:, :brand_id:, :year:, :style)";
+$manager->executeQuery(
+    $phql,
+    [
+        "name"     => "Lamborghini Espada",
+        "brand_id" => 7,
+        "year"     => 1969,
+        "style"    => "Grand Tourer",
+    ]
+);
+
+// Using placeholders
+$phql = "UPDATE Cars SET price = ?0, type = ?1 WHERE brands_id > ?2";
+$manager->executeQuery(
+    $phql,
+    [
+        0 => 7000.00,
+        1 => 'Sedan',
+        2 => 5,
+    ]
+);
+
+// Using placeholders
+$phql = "DELETE FROM Cars WHERE id BETWEEN :initial: AND :final:";
+$manager->executeQuery(
+    $phql,
+    [
+        "initial" => 1,
+        "final"   => 100,
+    ]
+);
+
+//Creating queries using the Query Builder
+// 'SELECT Robots.* FROM Robots';
+$builder->from("Robots");
+
+// 'SELECT Robots.*, RobotsParts.* FROM Robots, RobotsParts';
+$builder->from(
+    [
+        "Robots",
+        "RobotsParts",
+    ]
+);
+
+// 'SELECT * FROM Robots';
+$phql = $builder->columns("*")
+    ->from("Robots");
+
+// 'SELECT id FROM Robots';
+$builder->columns("id")
+    ->from("Robots");
+
+// 'SELECT id, name FROM Robots';
+$builder->columns(["id", "name"])
+    ->from("Robots");
+
+// 'SELECT Robots.* FROM Robots WHERE Robots.name = "Voltron"';
+$builder->from("Robots")
+    ->where("Robots.name = 'Voltron'");
+
+// 'SELECT Robots.* FROM Robots WHERE Robots.id = 100';
+$builder->from("Robots")
+    ->where(100);
+
+// 'SELECT Robots.* FROM Robots WHERE Robots.type = "virtual" AND Robots.id > 50';
+$builder->from("Robots")
+    ->where("type = 'virtual'")
+    ->andWhere("id > 50");
+
+// 'SELECT Robots.* FROM Robots WHERE Robots.type = "virtual" OR Robots.id > 50';
+$builder->from("Robots")
+    ->where("type = 'virtual'")
+    ->orWhere("id > 50");
+
+// 'SELECT Robots.* FROM Robots GROUP BY Robots.name';
+$builder->from("Robots")
+    ->groupBy("Robots.name");
+
+// 'SELECT Robots.* FROM Robots GROUP BY Robots.name, Robots.id';
+$builder->from("Robots")
+    ->groupBy(["Robots.name", "Robots.id"]);
+
+// 'SELECT Robots.name, SUM(Robots.price) FROM Robots GROUP BY Robots.name';
+$builder->columns(["Robots.name", "SUM(Robots.price)"])
+    ->from("Robots")
+    ->groupBy("Robots.name");
+
+// 'SELECT Robots.name, SUM(Robots.price) FROM Robots GROUP BY Robots.name HAVING SUM(Robots.price) > 1000';
+$builder->columns(["Robots.name", "SUM(Robots.price)"])
+    ->from("Robots")
+    ->groupBy("Robots.name")
+    ->having("SUM(Robots.price) > 1000");
+
+// 'SELECT Robots.* FROM Robots JOIN RobotsParts';
+$builder->from("Robots")
+    ->join("RobotsParts");
+
+// 'SELECT Robots.* FROM Robots JOIN RobotsParts AS p';
+$builder->from("Robots")
+    ->join("RobotsParts", null, "p");
+
+// 'SELECT Robots.* FROM Robots JOIN RobotsParts ON Robots.id = RobotsParts.robots_id AS p';
+$builder->from("Robots")
+    ->join("RobotsParts", "Robots.id = RobotsParts.robots_id", "p");
+
+// 'SELECT Robots.* FROM Robots
+// JOIN RobotsParts ON Robots.id = RobotsParts.robots_id AS p
+// JOIN Parts ON Parts.id = RobotsParts.parts_id AS t';
+$builder->from("Robots")
+    ->join("RobotsParts", "Robots.id = RobotsParts.robots_id", "p")
+    ->join("Parts", "Parts.id = RobotsParts.parts_id", "t");
+
+// 'SELECT r.* FROM Robots AS r';
+$builder->addFrom("Robots", "r");
+
+// 'SELECT Robots.*, p.* FROM Robots, Parts AS p';
+$builder->from("Robots")
+    ->addFrom("Parts", "p");
+
+// 'SELECT r.*, p.* FROM Robots AS r, Parts AS p';
+$builder->from(["r" => "Robots"])
+    ->addFrom("Parts", "p");
+
+// 'SELECT r.*, p.* FROM Robots AS r, Parts AS p';
+$builder->from(["r" => "Robots", "p" => "Parts"]);
+
+// 'SELECT Robots.* FROM Robots LIMIT 10';
+$builder->from("Robots")
+    ->limit(10);
+
+// 'SELECT Robots.* FROM Robots LIMIT 10 OFFSET 5';
+$builder->from("Robots")
+    ->limit(10, 5);
+
+// 'SELECT Robots.* FROM Robots WHERE id BETWEEN 1 AND 100';
+$builder->from("Robots")
+    ->betweenWhere("id", 1, 100);
+
+// 'SELECT Robots.* FROM Robots WHERE id IN (1, 2, 3)';
+$builder->from("Robots")
+    ->inWhere("id", [1, 2, 3]);
+
+// 'SELECT Robots.* FROM Robots WHERE id NOT IN (1, 2, 3)';
+$builder->from("Robots")
+    ->notInWhere("id", [1, 2, 3]);
+
+// 'SELECT Robots.* FROM Robots WHERE name LIKE '%Art%';
+$builder->from("Robots")
+    ->where("name LIKE :name:", ["name" => "%" . $name . "%"]);
+
+// 'SELECT r.* FROM Store\Robots WHERE r.name LIKE '%Art%';
+$builder->from(['r' => 'Store\Robots'])
+    ->where("r.name LIKE :name:", ["name" => "%" . $name . "%"]);
+
+//Bound Parameters
+// Passing parameters in the query construction
+$robots = $this->modelsManager->createBuilder()
+    ->from("Robots")
+    ->where("name = :name:", ["name" => $name])
+    ->andWhere("type = :type:", ["type" => $type])
+    ->getQuery()
+    ->execute();
+
+// Passing parameters in query execution
+$robots = $this->modelsManager->createBuilder()
+    ->from("Robots")
+    ->where("name = :name:")
+    ->andWhere("type = :type:")
+    ->getQuery()
+    ->execute(["name" => $name, "type" => $type]);
+
+                        </pre>
+                    </section>
+
+                    <!--Validation-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Validation" href="#Validation">Validation</a> <a href="javascript:;" title="Validation CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+                        </pre>
+                    </section>
+
+                    <!--Filter-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Filter" href="#Filter">Filter</a> <a href="javascript:;" title="Filter CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+                        </pre>
+                    </section>
+
+                    <!--Volt-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Volt" href="#Volt">Volt</a> <a href="javascript:;" title="Volt CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+// Registering Volt as template engine
+$di->set('view', function() {
+$view = new \Phalcon\Mvc\View();
+$view->setViewsDir('../app/views/');
+$view->registerEngines(array(
+".volt" => 'Phalcon\Mvc\View\Engine\Volt'
+));
+return $view;
+});
+
+// Variables
+
+// for $post->title
+{{ post.title }}
+
+// for $post['title']
+{{ post['title'] }}
+
+
+// Filters
+
+// e or escape filter
+{{ "<h1>Hello</h1>"|e }}
+{{ "<h1>Hello</h1>"|escape }}
+
+// trim filter
+{{ "   hello   "|trim }}
+
+// striptags filter
+{{ "<h1>Hello</h1>"|striptags }}
+
+// slashes filter
+{{ "'this is a string'"|slashes }}
+
+// stripslashes filter
+{{ "\'this is a string\'"|stripslashes }}
+
+// capitalize filter
+{{ "hello"|capitalize }}
+
+// lower filter
+{{ "HELLO"|lower }}
+
+// upper filter
+{{ "hello"|upper }}
+
+// length filter
+{{ "robots"|length }}
+{{ [1, 2, 3]|length }}
+
+// nl2br filter
+{{ "some\ntext"|nl2br }}
+
+// sort filter
+{% set sorted=[3, 1, 2]|sort %}
+
+// keys filter
+{% set keys=['first': 1, 'second': 2, 'third': 3]|keys %}
+
+// json_encode filter
+{% robots|json_encode %}
+
+// json_decode filter
+{% set decoded='{"one":1,"two":2,"three":3}'|json_decode %}
+
+// url_encode filter
+{{ post.permanent_link|url_encode }}
+
+// convert_encoding filter
+{{ "désolé"|convert_encoding('utf8', 'latin1') }}
+
+
+// Comments
+// note: this is a comment
+{% set price = 100; %}
+#}
+
+
+// Loops
+
+// Loop for
+{% for robot in robots %}
+{{ robot.name|e }}
+{% endfor  %}
+
+// Loop for with keys
+{% for key, value in robots %}
+{{ value.name|e }}
+{% endfor  %}
+
+// Loop with else condition
+{% for key, value in robots %}
+{{ value.name|e }}
+{% else %}
+There are no robots to show
+{% endfor  %}
+
+// Break loop control
+{% break %}
+
+// If statement
+{% if robot.type == "cyborg" %}
+{{ robot.name|e }}
+{% endif %}
+
+// If else statement
+{% if robot.type == "cyborg" %}
+{{ robot.name|e }}
+{% else %}
+{{ robot.name|e }} (not a cyborg)
+{% endif %}
+
+// Elseif statement
+{% if robot.type == "cyborg" %}
+{{ robot.name|e }}
+{% elseif robot.type == "virtual" %}
+Robot is virtual
+{% elseif robot.type == "mechanical" %}
+Robot is mechanical
+{% else %}
+{{ robot.name|e }} (not a cyborg)
+{% endif %}
+
+
+// Loop context
+
+// The current iteration of the loop. (1 indexed)
+loop.index
+
+// The current iteration of the loop. (0 indexed)
+loop.index0
+
+// The number of iterations from the end of the loop (1 indexed)
+loop.revindex
+
+// The number of iterations from the end of the loop (0 indexed)
+loop.revindex0
+
+// True if in the first iteration.
+loop.first
+
+// True if in the last iteration.
+loop.last
+
+// The number of items to iterate
+loop.length
+
+// Setting values to var
+{% set fruits = ['Apple', 'Banana', 'Orange'] %}
+{% set name = robot.name %}
+
+// Multiple assignments
+{% set fruits = ['Apple', 'Banana', 'Orange'], name = robot.name, active = true %}
+
+// Compound assignment
+{% set price += 100.00 %}
+{% set age *= 5 %}
+
+// Simple expression
+{{ (1 + 1) * 2 }}
+
+// Expression evaluated without be printed
+{% do (1 + 1) * 2 %}
+
+
+// Arrays
+
+// Simple array
+{{ ['Apple', 'Banana', 'Orange'] }}
+
+// Other way simple array
+{{ ['Apple', 1, 2.5, false, null] }}
+
+// Multidimensional array
+{{ [[1, 2], [3, 4], [5, 6]] }}
+
+// Hash-style array
+{{ ['first': 1, 'second': 4/2, 'third': '3'] }}
+
+// Curly braces to define arrays
+{% set myArray = {'Apple', 'Banana', 'Orange'} %}
+
+
+// Operators
+
+// Return true if the left or right operand is evaluated as true
+or
+
+// Return true if both left and right operands are evaluated as true
+and
+
+// Negates an expression
+not
+
+// Parenthesis groups expressions
+(expr)
+
+// Concatenates both operands {{ “hello ” ~ “world” }}
+~
+
+// Applies a filter in the right operand to the left {{ “hello”|uppercase }}
+|
+
+// Creates a range {{ ‘a’..’z’ }} {{ 1..10 }}
+..
+
+// Same as == (equals), also performs tests
+is
+
+// To check if an expression is contained into other expressions if “a” in “abc”
+in
+
+// Same as != (not equals)
+is not
+
+// Ternary operator. The same as the PHP ternary operator
+‘a’ ? ‘b’ : ‘c’
+
+// Increments a value
+++
+
+// Decrements a value
+--
+
+
+// Built-in tests available
+
+// Checks if a variable is defined (isset)
+defined
+
+// Checks if a variable is empty
+empty
+
+// Checks if a numeric value is even
+even
+
+// Checks if a numeric value is odd
+odd
+
+// Checks if value is numeric
+numeric
+
+// Checks if value is scalar (not an array or object)
+scalar
+
+// Checks if a value is iterable. Can be traversed by a “for” statement
+iterable
+
+// Checks if a value is divisible by other value
+divisibleby
+
+// Checks if a value is identical to other value
+sameas
+
+// Checks if a value is of the specified type
+type
+
+
+// Macros
+
+{%- macro related_bar(related_links) %}
+// Generate html links
+{%- endmacro %}
+
+// Print related links
+{{ related_bar(links) }}
+
+
+// Tag Helpers
+
+// Include js file
+{{ javascript_include("js/jquery.js") }}
+
+// Tags helpers
+Phalcon\Tag::linkTo                     link_to()
+Phalcon\Tag::textField                  text_field()
+Phalcon\Tag::passwordField              password_field()
+Phalcon\Tag::hiddenField                hidden_field()
+Phalcon\Tag::fileField                  file_field()
+Phalcon\Tag::checkField                 check_field()
+Phalcon\Tag::radioField                 radio_field()
+Phalcon\Tag::dateField                  date_field()
+Phalcon\Tag::emailField                 email_field()
+Phalcon\Tag::numberField                number_field()
+Phalcon\Tag::submitButton               submit_button()
+Phalcon\Tag::selectStatic               select_static()
+Phalcon\Tag::select                     select()
+Phalcon\Tag::textArea                   text_area()
+Phalcon\Tag::form                       form()
+Phalcon\Tag::endForm                    end_form()
+Phalcon\Tag::getTitle                   get_title()
+Phalcon\Tag::stylesheetLink             stylesheet_link()
+Phalcon\Tag::javascriptInclude          javascript_include()
+Phalcon\Tag::image                      image()
+Phalcon\Tag::friendlyTitle              friendly_title()
+
+
+// Functions
+
+// Includes the content produced in a previous rendering stage
+content
+
+// Same as ‘content’
+get_content
+
+// Dynamically loads a partial view in the current template
+partial
+
+// Render the contents of the parent block
+super
+
+// Calls the PHP function with the same name
+time
+
+// Calls the PHP function with the same name
+date
+
+// Calls the PHP function ‘var_dump’
+dump
+
+// Returns the current version of the framework
+version
+
+// Reads a PHP constant
+constant
+
+// Generate a URL using the ‘url’ service
+url
+
+
+// View Integration
+
+// Simple include of a partial
+{{ partial("partials/footer") }}
+
+// Passing extra variables
+{{ partial("partials/footer", ['links': $links]) }}
+
+// Simple include of a partial
+{% include "partials/footer" %}
+
+// Passing extra variables
+{% include "partials/footer" with ['links': links] %}
+
+
+// Template Inheritance
+
+// Blocks for hierarchy
+
+// templates/base.volt
+{% block head %}
+// Your content here
+{% endblock %}
+
+// templates/index1.volt
+{% extends "templates/base.volt" %}
+{% block head %}
+// Include this in head
+{% endblock %}
+
+// Keep values from father
+{{ super() }}
+
+
+// Autoescape mode
+
+// Autoescaped true
+{% autoescape true %}
+// code here
+{% endautoescape %}
+
+// Autoescaped false
+{% autoescape false %}
+// code here
+{% endautoescape %}
+
+// Caching view fragments
+
+// Cache view
+{% cache "sidebar" %}
+
+{% endcache %}
+
+// cache the sidebar by 1 hour
+{% cache "sidebar" 3600 %}
+
+{% endcache %}
+
+// Cache with expresion
+{% cache ("article-" ~ post.id) 3600 %}
+
+{% endcache %}
+
+
+// Inject service
+
+// Inject the 'flash' service
+{{ flash.output() }}
+                        </pre>
+                    </section>
+
+                    <!--Pagination-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Pagination" href="#Pagination">Pagination</a> <a href="javascript:;" title="Pagination CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+//Paginator
+
+$builder = $this->modelsManager->createBuilder()
+            ->columns("member_id, uname")
+            ->where("uname = '123123'")
+            ->andWhere("type = '1'")
+            ->from("Member")
+            ->orderBy("member_id");
+
+        $paginator = new PaginatorQueryBuilder(
+            [
+                "builder" => $builder,
+                "limit" => 2,
+                "page" => 2,
+            ]
+        );
+        $page = $paginator->getPaginate();
+
+        $data = [
+            'current' => $page->current,  //当前页
+            'before' => $page->before,    //开始页
+            'next' => $page->next,        //下一页
+            'last' => $page->last,        //最后一页
+            'total_pages' => $page->total_pages,  //总页数
+            'total_items' => $page->total_items,  //总行数
+            'data' => $page->items->toArray(),
+        ];
+
+                        </pre>
+                    </section>
+
+                    <!--Translations-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="Translations" href="#Translations">Translations</a> <a href="javascript:;" title="Translations CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+                        </pre>
+                    </section>
+
+                    <!--CLI-->
+                    <section class="cmd-description grid-item">
+                        <h4><a name="CLI" href="#CLI">CLI</a> <a href="javascript:;" title="CLI CLI @ Phalcon Docs"><i class="icon-file-text"></i></a></h4>
+                        <pre class="prettyprint lang-php">
+                        </pre>
+                    </section>
+
+
+
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery.highlight-4.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/foundation.min.js"></script>
+<script src="assets/js/masonry.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'gaTrackingID', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
